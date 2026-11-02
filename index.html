@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Código Limpio · Laboratorio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-view="hero">
+
+  <header class="topbar">
+    <button class="brand" data-go="hero" title="Volver al inicio">&lt;/&gt; CÓDIGO LIMPIO</button>
+    <nav>
+      <button data-go="lab" title="Los 11 módulos">Laboratorio</button>
+      <button data-go="scanner" title="Analiza tu propio código">Escáner</button>
+      <button data-go="map" title="Cómo se conectan las ideas">Mapa</button>
+      <button data-go="final" title="Tu certificado simbólico">Certificado</button>
+    </nav>
+    <div class="pill" id="topProgress" title="Conceptos descubiertos">0 / 11</div>
+  </header>
+
+  <main>
+    <section id="view-hero" class="view active">
+      <h1 class="glitch">CÓDIGO LIMPIO</h1>
+      <h2 class="subtitle">“El código funciona. Ahora hagamos que valga la pena mantenerlo.”</h2>
+      <div class="window hero-window">
+        <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span id="heroFile">desordenado.js</span></div>
+        <pre id="heroCode" class="code"></pre>
+      </div>
+      <p id="heroQuote" class="hero-quote">El código no solo debe funcionar. Debe poder entenderse.</p>
+      <button id="enterBtn" class="action big hero-enter">ENTRAR AL LABORATORIO</button>
+    </section>
+
+    <section id="view-lab" class="view">
+      <h2 class="title">LABORATORIO DE CÓDIGO LIMPIO</h2>
+      <div class="panel progress-panel">
+        <div><span class="label">PROGRESO</span>
+          <div class="big-count"><span id="labCount">0</span> / 11 conceptos descubiertos</div></div>
+        <div class="bar"><div id="labBar" class="fill"></div></div>
+      </div>
+      <div id="cards" class="grid"></div>
+    </section>
+
+    <section id="view-scanner" class="view">
+      <h2 class="title">🔍 ESCÁNER DE CÓDIGO</h2>
+      <p class="disclaimer">⚠ Demostración educativa basada en reglas simples. NO es un analizador profesional. Todo se analiza en tu navegador.</p>
+      <div class="scanner-layout">
+        <div class="window">
+          <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span>tu_codigo.js</span></div>
+          <textarea id="scanInput" spellcheck="false" aria-label="Código JavaScript a analizar"></textarea>
+        </div>
+        <div class="panel" id="scanResult"><p class="muted">Pega tu código y pulsa “ANALIZAR CÓDIGO”.</p></div>
+      </div>
+      <div class="row">
+        <button id="scanBtn" class="action">ANALIZAR CÓDIGO</button>
+        <button id="sampleBtn" class="ghost">CARGAR EJEMPLO</button>
+      </div>
+    </section>
+
+    <section id="view-map" class="view">
+      <h2 class="title">MAPA DE CONCEPTOS</h2>
+      <p class="muted center">Haz clic en una idea para resaltarla.</p>
+      <svg id="mapSvg" viewBox="0 0 800 580" role="img" aria-label="Mapa de las 11 ideas"></svg>
+      <div id="mapInfo" class="panel map-info"></div>
+    </section>
+
+    <section id="view-final" class="view">
+      <h2 class="title">RESULTADO FINAL</h2>
+      <div id="finalBox"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="window modal-window">
+      <div class="win-bar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span id="modalTitle"></span>
+        <button id="modalClose" class="ghost small">← VOLVER</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="celebration" class="celebration" hidden>
+    <div class="celebration-box">
+      <pre class="ascii">╔══════════════════════════════╗
+       LABORATORIO COMPLETADO
+╚══════════════════════════════╝</pre>
+      <p>Has descubierto las 11 ideas<br>fundamentales del Código Limpio.</p>
+      <blockquote>“Un buen programador no solamente hace que el programa funcione; hace que el siguiente cambio sea fácil de realizar.”</blockquote>
+      <div class="row">
+        <button id="seeCertificate" class="action">VER CERTIFICADO</button>
+        <button id="keepExploring" class="ghost">SEGUIR EXPLORANDO</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="script.js"></script>
+</body>
+</html>
